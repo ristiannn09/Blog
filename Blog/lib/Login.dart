@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
               print(inputNama.text);
               print(inputPassword.text);
               //Navigator.pushNamed(context, "/home"),
-              Navigator.pushReplacementNamed(context, "/home" );
+              Navigator.pushNamed(context, "/home" );
             },
           ),
         ],
