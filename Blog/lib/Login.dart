@@ -42,7 +42,8 @@ class _LoginPageState extends State<LoginPage> {
           ElevatedButton(
             child: Text("Login"),
             onPressed: () {
-              print("Tombol Login ditekan");
+              print(inputUsername);
+              print(inputPassword);
             },
           ),
         ],
