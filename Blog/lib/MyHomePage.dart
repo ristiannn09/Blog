@@ -14,6 +14,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text("Blog"),
       ),
 
@@ -47,13 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text("Tampilkan Nama"),
             onPressed: () {
               print(inputNama.text);
-            },
-          ),
-
-          ElevatedButton(
-            child: Text("Back"),
-            onPressed: () {
-              Navigator.pop(context);
             },
           ),
         ],
