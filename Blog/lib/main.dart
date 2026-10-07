@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Login.dart';
+import 'package:flutter_application_1/MyHomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const LoginPage(),
+      routes: {
+        "/" : (context) => const LoginPage(),
+        "/home" : (context) => const MyHomePage(),
+      }
     );
   }
 }

@@ -70,6 +70,8 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               print(inputNama.text);
               print(inputPassword.text);
+              Navigator.pushNamed(context, "/home"),
+              Navigator.pushReplacement(context, )
             },
           ),
         ],
