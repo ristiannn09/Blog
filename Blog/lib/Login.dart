@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginnPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
@@ -9,6 +9,7 @@ class LoginnPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   TextEditingController inputNama = TextEditingController();
+    TextEditingController inputPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +42,31 @@ class _LoginPageState extends State<LoginPage> {
 
           Padding(padding: EdgeInsets.all(16)
           ),
+                    Center(
+            child: Container(
+              width: 300,
+              color: Color.fromARGB(197, 220, 155, 155),
+
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Masukan Password Anda",
+                  border: OutlineInputBorder(),
+                ),
+                controller: inputPassword,
+                onSubmitted: (values) {
+                  inputPassword.text = values;
+                },
+              ),
+            ),
+          ),
+
+          Padding(padding: EdgeInsets.all(16)
+          ),
           ElevatedButton(
-            child: Text("Tampilkan Nama"),
+            child: Text("Login"),
             onPressed: () {
               print(inputNama.text);
+              print(inputPassword.text);
             },
           ),
         ],
