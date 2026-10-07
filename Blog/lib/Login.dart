@@ -9,10 +9,14 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   TextEditingController inputNama = TextEditingController();
+@override
+Widget build(BuildContext context) {
+    return Scaffold(appBar: AppBar(
+        title: Text("Blog"),
+      ),
 
 
 
 
 
-  
 }
