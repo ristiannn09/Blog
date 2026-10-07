@@ -8,84 +8,70 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController inputNama = TextEditingController();
-  final TextEditingController inputPassword = TextEditingController();
-
-  // Memastikan controller di-dispose untuk mencegah memory leak
-  @override
-  void dispose() {
-    inputNama.dispose();
-    inputPassword.dispose();
-    super.dispose();
-  }
+  TextEditingController inputNama = TextEditingController();
+  TextEditingController inputPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Aplikasi Bengkel")),
-      backgroundColor: const Color(0xFFFFFFFF),
+      appBar: AppBar(title: Text("Login Blog")),
+
+      backgroundColor: Color(0xFFFFFFFF),
+
       body: Column(
         children: [
-          const Center(
+          Center(
             child: Image(
-              image: AssetImage('asset/image/girr.png'),
+              image: AssetImage("asset/yy.png"),
               width: 175,
               height: 175,
             ),
           ),
-
           Center(
             child: Container(
               width: 300,
-              color: const Color.fromARGB(197, 220, 155, 155),
+              color: Color.fromARGB(197, 220, 155, 155),
+
               child: TextField(
-                controller: inputNama,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: "Masukan Nama Anda",
                   border: OutlineInputBorder(),
                 ),
+                controller: inputNama,
+                onSubmitted: (values) {
+                  inputNama.text = values;
+                },
               ),
             ),
           ),
 
-          const SizedBox(height: 16),
-
+          Padding(padding: EdgeInsets.all(16)),
           Center(
             child: Container(
               width: 300,
-              color: const Color.fromARGB(197, 220, 155, 155),
+              color: Color.fromARGB(197, 220, 155, 155),
+
               child: TextField(
-                controller: inputPassword,
-                obscureText: true, // Menyembunyikan teks password
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: "Masukan Password Anda",
                   border: OutlineInputBorder(),
                 ),
+                controller: inputPassword,
+                onSubmitted: (values) {
+                  inputPassword.text = values;
+                },
               ),
             ),
           ),
 
-          const SizedBox(height: 16),
-
+          Padding(padding: EdgeInsets.all(16)),
           ElevatedButton(
-            child: const Text("Login"),
+            child: Text("Login"),
             onPressed: () {
-              String nama = inputNama.text;
-              String password = inputPassword.text;
-
-              // Logika pengecekan login
-              if (nama == "admin" && password == "12345") {
-                // Jika benar, navigasi ke halaman home
-                Navigator.pushReplacementNamed(context, "/home");
-              } else {
-                // Jika salah, tampilkan SnackBar pemberitahuan
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Nama atau Password salah!"),
-                    backgroundColor: Colors.red,
-                  ),
-                );
-              }
+              print(inputNama.text);
+              print(inputPassword.text);
+              //Navigator.pushNamed(context, "/home"),
+              Navigator.pushNamed(context, "/home" );
             },
           ),
         ],
