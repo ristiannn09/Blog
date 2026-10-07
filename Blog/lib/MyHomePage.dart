@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController inputNama = TextEditingController();
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController inputUsername = TextEditingController();
+  TextEditingController inputPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Blog"),
+        title: Text("Login"),
       ),
 
       backgroundColor: Color(0xFFFFFFFF),
@@ -26,25 +27,48 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 300,
               color: Color.fromARGB(197, 220, 155, 155),
 
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Masukan Nama Anda",
-                  border: OutlineInputBorder(),
-                ),
-                controller: inputNama,
-                onSubmitted: (values) {
-                  inputNama.text = values;
-                },
+              child: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: "Masukan Username",
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: inputUsername,
+                    onSubmitted: (values) {
+                      inputUsername.text = values;
+                    },
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                  ),
+
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Masukan Password",
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: inputPassword,
+                    onSubmitted: (values) {
+                      inputPassword.text = values;
+                    },
+                  ),
+                ],
               ),
             ),
           ),
 
-          Padding(padding: EdgeInsets.all(16)
+          Padding(
+            padding: EdgeInsets.all(16),
           ),
+
           ElevatedButton(
-            child: Text("Tampilkan Nama"),
+            child: Text("Login"),
             onPressed: () {
-              print(inputNama.text);
+              print(inputUsername.text);
+              print(inputPassword.text);
             },
           ),
         ],
