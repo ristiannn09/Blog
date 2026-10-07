@@ -23,6 +23,9 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         children: [
           Center(
+            child: Image(
+              Image:
+            )
             child: Container(
               width: 300,
               color: Color.fromARGB(197, 220, 155, 155),
