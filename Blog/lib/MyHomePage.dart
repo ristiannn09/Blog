@@ -27,9 +27,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ElevatedButton(
           child: Text("Tampilkan Nama"),
           onPressed: () {
-            print(inputNama.text)
-          }
-        )
+            print(inputNama.text);
+          },
+        ),
       ],
       ),
     );
