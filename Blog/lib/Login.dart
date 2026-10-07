@@ -22,7 +22,9 @@ class _LoginPageState extends State<LoginPage> {
 
       body: Column(
         children: [
-          Center(child: Image)
+          Center(child: Image(image: AssetImage('asset/yinyang.png')
+          ),
+          ),
           Center(
             child: Container(
               width: 300,
