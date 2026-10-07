@@ -18,32 +18,57 @@ class _LoginPageState extends State<LoginPage> {
         title: Text("Login"),
       ),
 
+      backgroundColor: Color(0xFFFFFFFF),
+
       body: Column(
         children: [
-          SizedBox(height: 100),
+          Center(
+            child: Container(
+              width: 300,
+              color: Color.fromARGB(197, 220, 155, 155),
 
-          TextField(
-            controller: inputUsername,
-            decoration: InputDecoration(
-              hintText: "Masukkan Username",
-              border: OutlineInputBorder(),
+              child: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: "Masukan Username",
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: inputUsername,
+                    onSubmitted: (values) {
+                      inputUsername.text = values;
+                    },
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                  ),
+
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Masukan Password",
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: inputPassword,
+                    onSubmitted: (values) {
+                      inputPassword.text = values;
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
 
-          TextField(
-            controller: inputPassword,
-            obscureText: true,
-            decoration: InputDecoration(
-              hintText: "Masukkan Password",
-              border: OutlineInputBorder(),
-            ),
+          Padding(
+            padding: EdgeInsets.all(16),
           ),
 
           ElevatedButton(
             child: Text("Login"),
             onPressed: () {
-              print(inputUsername);
-              print(inputPassword);
+              print(inputUsername.text);
+              print(inputPassword.text);
             },
           ),
         ],
