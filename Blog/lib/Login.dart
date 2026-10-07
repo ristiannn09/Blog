@@ -24,8 +24,8 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Center(
             child: Image(
-              Image:
-            )
+              Image: AssetImage('asset/yinyang.png')
+            ),
             child: Container(
               width: 300,
               color: Color.fromARGB(197, 220, 155, 155),
